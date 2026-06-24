@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Запись — <%= mc.title %></title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <a href="/" class="logo">ЯРАТАМ</a>
+      <nav class="nav">
+        <a href="/">Каталог</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <a href="/masterclass/<%= mc._id %>" class="back-link">&larr; Назад</a>
+
+    <div class="form-container">
+      <h1>Запись на «<%= mc.title %>»</h1>
+      <p class="form-subtitle"><%= mc.date %> в <%= mc.time %> | Свободных мест: <%= mc.slotsLeft %></p>
+
+      <% if (errors && errors.length > 0) { %>
+        <div class="alert alert-error">
+          <% errors.forEach(err => { %>
+            <p><%= err %></p>
+          <% }) %>
+        </div>
+      <% } %>
+
+      <form method="POST" action="/register/<%= mc._id %>" class="form">
+        <div class="form-group">
+          <label for="name">Ваше имя *</label>
+          <input type="text" id="name" name="name" required minlength="2" placeholder="Иван Иванов">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required placeholder="ivan@example.com">
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Телефон *</label>
+          <input type="tel" id="phone" name="phone" required placeholder="+7 (999) 123-45-67">
+        </div>
+
+        <button type="submit" class="btn btn-large">Записаться</button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Казанский молодежный центр «Яратам» &copy; 2026</p>
+    </div>
+  </footer>
+</body>
+</html>

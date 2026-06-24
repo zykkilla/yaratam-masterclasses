@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-06-25T00:00:00.000Z" agent="5.0" version="21.0.0">
+  <diagram id="activity" name="Диаграмма деятельности">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1600" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="start" value="" style="ellipse;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="370" y="30" width="40" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="a1" value="Открыть главную страницу" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="310" y="100" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" style="" edge="1" source="start" target="a1" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="a2" value="Выбрать категорию / ввести поиск" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="290" y="180" width="240" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" style="" edge="1" source="a1" target="a2" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="a3" value="Выбрать мастер-класс" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="310" y="260" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" style="" edge="1" source="a2" target="a3" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="a4" value="Просмотреть детали" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#000000;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="310" y="340" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" style="" edge="1" source="a3" target="a4" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="d1" value="" style="diamond;fillColor=#f5f5f5;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="360" y="410" width="80" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" style="" edge="1" source="a4" target="d1" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="a_err" value="Показать: Места закончились" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="550" y="415" width="180" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="Нет мест" style="" edge="1" source="d1" target="a_err" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="a5" value="Нажать «Записаться»" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="310" y="510" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" value="Есть места" style="" edge="1" source="d1" target="a5" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="a6" value="Заполнить форму (имя, email, телефон)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="280" y="590" width="260" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" style="" edge="1" source="a5" target="a6" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="d2" value="" style="diamond;fillColor=#f5f5f5;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="360" y="660" width="80" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" style="" edge="1" source="a6" target="d2" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="a_err2" value="Показать ошибки валидации" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="550" y="665" width="190" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" value="Ошибка" style="" edge="1" source="d2" target="a_err2" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e10b" style="" edge="1" source="a_err2" target="a6" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="a7" value="Сохранить запись в БД" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="310" y="760" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" value="Да" style="" edge="1" source="d2" target="a7" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="a8" value="Показать подтверждение" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="310" y="840" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" style="" edge="1" source="a7" target="a8" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <mxCell id="end" value="" style="ellipse;fillColor=#000000;strokeColor=#000000;strokeWidth=3;" vertex="1" parent="1">
+          <mxGeometry x="370" y="920" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" style="" edge="1" source="a8" target="end" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

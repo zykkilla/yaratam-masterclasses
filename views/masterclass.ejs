@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= mc.title %> — Яратам</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <a href="/" class="logo">ЯРАТАМ</a>
+      <nav class="nav">
+        <a href="/">Каталог</a>
+        <a href="/my-registrations">Мои записи</a>
+        <% if (user) { %>
+          <a href="/admin/dashboard">Админ-панель</a>
+        <% } else { %>
+          <a href="/admin/login">Вход</a>
+        <% } %>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <% if (message) { %>
+      <div class="alert alert-<%= message.type %>"><%= message.text %></div>
+    <% } %>
+
+    <a href="/" class="back-link">&larr; Назад к каталогу</a>
+
+    <article class="detail">
+      <div class="detail-header">
+        <span class="detail-category"><%= mc.categoryName %></span>
+        <h1><%= mc.title %></h1>
+      </div>
+
+      <div class="detail-info">
+        <div class="info-item">
+          <strong>Дата:</strong> <%= mc.date %>
+        </div>
+        <div class="info-item">
+          <strong>Время:</strong> <%= mc.time %>
+        </div>
+        <div class="info-item">
+          <strong>Места:</strong>
+          <% if (mc.slotsLeft > 0) { %>
+            <span class="slots-available"><%= mc.registeredCount %> / <%= mc.maxParticipants %></span>
+          <% } else { %>
+            <span class="slots-full">Места закончились</span>
+          <% } %>
+        </div>
+      </div>
+
+      <div class="detail-description">
+        <h2>Описание</h2>
+        <p><%= mc.description %></p>
+      </div>
+
+      <% if (mc.slotsLeft > 0) { %>
+        <a href="/register/<%= mc._id %>" class="btn btn-large">Записаться</a>
+      <% } else { %>
+        <button class="btn btn-large btn-disabled" disabled>Нет свободных мест</button>
+      <% } %>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Казанский молодежный центр «Яратам» &copy; 2026</p>
+    </div>
+  </footer>
+</body>
+</html>

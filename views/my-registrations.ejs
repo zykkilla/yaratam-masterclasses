@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мои записи — Яратам</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <a href="/" class="logo">ЯРАТАМ</a>
+      <nav class="nav">
+        <a href="/">Каталог</a>
+        <a href="/my-registrations">Мои записи</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Мои записи</h1>
+
+    <form method="GET" action="/my-registrations" class="filter-form" style="margin-bottom: 2rem;">
+      <input type="email" name="email" value="<%= email %>" placeholder="Введите ваш email" class="filter-input" required>
+      <button type="submit" class="btn">Найти</button>
+    </form>
+
+    <% if (email && registrations.length === 0) { %>
+      <p class="empty">Записей не найдено</p>
+    <% } %>
+
+    <% if (registrations.length > 0) { %>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Мастер-класс</th>
+            <th>Дата</th>
+            <th>Время</th>
+            <th>Дата записи</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% registrations.forEach(reg => { %>
+            <tr>
+              <td><%= reg.masterclassTitle %></td>
+              <td><%= reg.masterclassDate %></td>
+              <td><%= reg.masterclassTime %></td>
+              <td><%= reg.createdAt.toLocaleDateString('ru-RU') %></td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    <% } %>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Казанский молодежный центр «Яратам» &copy; 2026</p>
+    </div>
+  </footer>
+</body>
+</html>

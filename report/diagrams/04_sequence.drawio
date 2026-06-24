@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-06-25T00:00:00.000Z" agent="5.0" version="21.0.0">
+  <diagram id="sequence" name="Диаграмма последовательности">
+    <mxGraphModel dx="1414" dy="841" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="actor" parent="1" style="shape=actor;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=1.5;" value="" vertex="1">
+          <mxGeometry height="80" width="40" x="30" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="actor_label" parent="1" style="text;html=1;align=center;verticalAlign=top;fontSize=13;fontStyle=1;fontColor=#000000;" value="Пользователь" vertex="1">
+          <mxGeometry height="20" width="100" x="0" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="box1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=1.5;fontSize=13;fontStyle=1;fontColor=#000000;" value="Браузер" vertex="1">
+          <mxGeometry height="50" width="140" x="200" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="box2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=1.5;fontSize=13;fontStyle=1;fontColor=#000000;" value="Express.js (Сервер)" vertex="1">
+          <mxGeometry height="50" width="180" x="440" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="box3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=1.5;fontSize=13;fontStyle=1;fontColor=#000000;" value="NeDB (БД)" vertex="1">
+          <mxGeometry height="50" width="140" x="740" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="box4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=1.5;fontSize=13;fontStyle=1;fontColor=#000000;" value="EJS (Шаблон)" vertex="1">
+          <mxGeometry height="50" width="140" x="980" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="l1" edge="1" parent="1" style="endArrow=none;strokeColor=#000000;strokeWidth=1;dashed=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="270" y="90" as="sourcePoint" />
+            <mxPoint x="270" y="1350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l2" edge="1" parent="1" style="endArrow=none;strokeColor=#000000;strokeWidth=1;dashed=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="530" y="90" as="sourcePoint" />
+            <mxPoint x="530" y="1350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l3" edge="1" parent="1" style="endArrow=none;strokeColor=#000000;strokeWidth=1;dashed=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="810" y="90" as="sourcePoint" />
+            <mxPoint x="810" y="1350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="l4" edge="1" parent="1" style="endArrow=none;strokeColor=#000000;strokeWidth=1;dashed=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1050" y="90" as="sourcePoint" />
+            <mxPoint x="1050" y="1350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="ab1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="40" width="20" x="260" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="msg1" edge="1" parent="1" style="endArrow=open;endSize=6;endFill=0;strokeColor=#000000;strokeWidth=1;fontSize=12;fontColor=#000000;" value="1: открыть каталог">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="80" y="155" as="sourcePoint" />
+            <mxPoint x="260" y="155" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="ab2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="50" width="20" x="520" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="msg2" edge="1" parent="1" style="endArrow=open;endSize=6;endFill=0;strokeColor=#000000;strokeWidth=1;fontSize=12;fontColor=#000000;" value="2: GET /">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="280" y="215" as="sourcePoint" />
+            <mxPoint x="520" y="215" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="msg3" edge="1" parent="1" style="endArrow=open;endSize=6;endFill=0;strokeColor=#000000;strokeWidth=1;fontSize=12;fontColor=#000000;" value="3: db.masterclasses.find()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="550" y="290" as="sourcePoint" />
+            <mxPoint x="800" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg4" edge="1" parent="1" style="endArrow=open;endSize=6;endFill=0;strokeColor=#000000;strokeWidth=1;dashed=1;fontSize=12;fontColor=#000000;" value="4: вернуть список мастер-классов">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="800" y="320" as="sourcePoint" />
+            <mxPoint x="550" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="msg5" edge="1" parent="1" style="endArrow=open;endSize=6;endFill=0;strokeColor=#000000;strokeWidth=1;fontSize=12;fontColor=#000000;" value="5: render(index, {masterclasses})">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="550" y="390" as="sourcePoint" />
+            <mxPoint x="1040" y="390" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg6" edge="1" parent="1" style="endArrow=open;endSize=6;endFill=0;strokeColor=#000000;strokeWidth=1;dashed=1;fontSize=12;fontColor=#000000;" value="6: вернуть HTML">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1040" y="420" as="sourcePoint" />
+            <mxPoint x="550" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="msg7" edge="1" parent="1" style="endArrow=open;endSize=6;endFill=0;strokeColor=#000000;strokeWidth=1;dashed=1;fontSize=12;fontColor=#000000;" value="7: отобразить страницу">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="520" y="490" as="sourcePoint" />
+            <mxPoint x="280" y="490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg8" edge="1" parent="1" style="endArrow=open;endSize=6;endFill=0;strokeColor=#000000;strokeWidth=1;fontSize=12;fontColor=#000000;" value="8: показать каталог">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="260" y="550" as="sourcePoint" />
+            <mxPoint x="80" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="ab3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="40" width="20" x="260" y="610" as="geometry" />
+        </mxCell>
+        <mxCell id="msg9" edge="1" parent="1" style="endArrow=open;endSize=6;endFill=0;strokeColor=#000000;strokeWidth=1;fontSize=12;fontColor=#000000;" value="9: нажать «Записаться»">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="80" y="625" as="sourcePoint" />
+            <mxPoint x="260" y="625" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="ab4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="50" width="20" x="520" y="670" as="geometry" />
+        </mxCell>
+        <mxCell id="msg10" edge="1" parent="1" style="endArrow=open;endSize=6;endFill=0;strokeColor=#000000;strokeWidth=1;fontSize=12;fontColor=#000000;" value="10: GET /register/:id">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="280" y="685" as="sourcePoint" />
+            <mxPoint x="520" y="685" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="msg11" edge="1" parent="1" style="endArrow=open;endSize=6;endFill=0;strokeColor=#000000;strokeWidth=1;fontSize=12;fontColor=#000000;" value="11: ввести имя, email, телефон">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="80" y="770" as="sourcePoint" />
+            <mxPoint x="260" y="770" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="msg12" edge="1" parent="1" style="endArrow=open;endSize=6;endFill=0;strokeColor=#000000;strokeWidth=1;fontSize=12;fontColor=#000000;" value="12: POST /register/:id (name, email, phone)">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="280" y="840" as="sourcePoint" />
+            <mxPoint x="520" y="840" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="ab5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=1;" value="" vertex="1">
+          <mxGeometry height="80" width="20" x="520" y="830" as="geometry" />
+        </mxCell>
+        <mxCell id="msg13" edge="1" parent="1" style="endArrow=open;endSize=6;endFill=0;strokeColor=#000000;strokeWidth=1;fontSize=12;fontColor=#000000;" value="13: валидация данных">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="550" y="880" as="sourcePoint" />
+            <mxPoint x="800" y="880" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg14" edge="1" parent="1" style="endArrow=open;endSize=6;endFill=0;strokeColor=#000000;strokeWidth=1;dashed=1;fontSize=12;fontColor=#000000;" value="14: данные корректны">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="800" y="910" as="sourcePoint" />
+            <mxPoint x="550" y="910" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="msg15" edge="1" parent="1" style="endArrow=open;endSize=6;endFill=0;strokeColor=#000000;strokeWidth=1;fontSize=12;fontColor=#000000;" value="15: db.registrations.insert()">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="550" y="970" as="sourcePoint" />
+            <mxPoint x="800" y="970" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg16" edge="1" parent="1" style="endArrow=open;endSize=6;endFill=0;strokeColor=#000000;strokeWidth=1;dashed=1;fontSize=12;fontColor=#000000;" value="16: подтверждение">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="800" y="1000" as="sourcePoint" />
+            <mxPoint x="550" y="1000" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="msg17" edge="1" parent="1" style="endArrow=open;endSize=6;endFill=0;strokeColor=#000000;strokeWidth=1;dashed=1;fontSize=12;fontColor=#000000;" value="17: redirect + message">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="520" y="1060" as="sourcePoint" />
+            <mxPoint x="280" y="1060" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg18" edge="1" parent="1" style="endArrow=open;endSize=6;endFill=0;strokeColor=#000000;strokeWidth=1;fontSize=12;fontColor=#000000;" value="18: показать подтверждение">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="260" y="1120" as="sourcePoint" />
+            <mxPoint x="80" y="1120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

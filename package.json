@@ -1,0 +1,25 @@
+{
+  "name": "yaratam-masterclasses",
+  "version": "1.0.0",
+  "description": "Каталог мастер-классов молодежного центра Яратам",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "yaratam",
+    "masterclass",
+    "catalog"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "ejs": "^6.0.1",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
+    "nedb-promises": "^6.2.3"
+  }
+}
