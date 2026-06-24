@@ -1,8 +1,12 @@
 const Datastore = require('nedb-promises');
 const bcrypt = require('bcryptjs');
 const path = require('path');
+const fs = require('fs');
 
 const dataDir = path.join(__dirname, '..', 'data');
+if (!fs.existsSync(dataDir)) {
+  fs.mkdirSync(dataDir, { recursive: true });
+}
 
 const db = {
   masterclasses: Datastore.create({ filename: path.join(dataDir, 'masterclasses.db'), autoload: true }),
