@@ -20,12 +20,12 @@ async function seed() {
   
   if (catCount === 0) {
     const categories = [
-      { name: 'Рисование', image: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&h=400&fit=crop' },
-      { name: 'Музыка', image: 'https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=600&h=400&fit=crop' },
-      { name: 'Танцы', image: 'https://images.unsplash.com/photo-1508700929628-666bc8bd84ea?w=600&h=400&fit=crop' },
+      { name: 'Рисование', image: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=600&h=400&fit=crop' },
+      { name: 'Музыка', image: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=600&h=400&fit=crop' },
+      { name: 'Танцы', image: 'https://images.unsplash.com/photo-1547153760-18fc86c3be8e?w=600&h=400&fit=crop' },
       { name: 'Программирование', image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop' },
       { name: 'Фотография', image: 'https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=600&h=400&fit=crop' },
-      { name: 'Кулинария', image: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=600&h=400&fit=crop' },
+      { name: 'Кулинария', image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=400&fit=crop' },
     ];
     const savedCats = await db.categories.insert(categories);
 
@@ -37,7 +37,7 @@ async function seed() {
         date: '2026-07-05',
         time: '14:00',
         maxParticipants: 15,
-        image: 'https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=600&h=400&fit=crop',
+        image: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=600&h=400&fit=crop',
         createdAt: new Date(),
       },
       {
@@ -57,7 +57,7 @@ async function seed() {
         date: '2026-07-10',
         time: '18:00',
         maxParticipants: 20,
-        image: 'https://images.unsplash.com/photo-1547153760-18fc86c3be8e?w=600&h=400&fit=crop',
+        image: 'https://images.unsplash.com/photo-1535525153412-5a42439a210d?w=600&h=400&fit=crop',
         createdAt: new Date(),
       },
       {
@@ -87,7 +87,7 @@ async function seed() {
         date: '2026-07-18',
         time: '11:00',
         maxParticipants: 8,
-        image: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=600&h=400&fit=crop',
+        image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=400&fit=crop',
         createdAt: new Date(),
       },
     ];
@@ -102,44 +102,39 @@ async function seed() {
 
     console.log('БД инициализирована: 6 мастер-классов, 6 категорий, 1 админ');
   } else {
-    const imageMap = {
-      'Рисование': 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&h=400&fit=crop',
-      'Музыка': 'https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=600&h=400&fit=crop',
-      'Танцы': 'https://images.unsplash.com/photo-1508700929628-666bc8bd84ea?w=600&h=400&fit=crop',
-      'Программирование': 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop',
-      'Фотография': 'https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=600&h=400&fit=crop',
-      'Кулинария': 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=600&h=400&fit=crop',
-    };
-    const mcImageMap = {
-      'Акварельный пейзаж': 'https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=600&h=400&fit=crop',
-      'Гитара для начинающих': 'https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=600&h=400&fit=crop',
-      'Хип-хоп для начинающих': 'https://images.unsplash.com/photo-1547153760-18fc86c3be8e?w=600&h=400&fit=crop',
-      'Хип-хоп基础': 'https://images.unsplash.com/photo-1547153760-18fc86c3be8e?w=600&h=400&fit=crop',
-      'Python с нуля': 'https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=600&h=400&fit=crop',
-      'Портрет на телефон': 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=600&h=400&fit=crop',
-      'Татарская кухня': 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=600&h=400&fit=crop',
-    };
-
-    const categories = await db.categories.find({});
-    for (const cat of categories) {
-      if (imageMap[cat.name] && !cat.image) {
-        await db.categories.update({ _id: cat._id }, { $set: { image: imageMap[cat.name] } });
-      }
+    const categoryUpdates = [
+      { name: 'Рисование', image: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=600&h=400&fit=crop' },
+      { name: 'Музыка', image: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=600&h=400&fit=crop' },
+      { name: 'Танцы', image: 'https://images.unsplash.com/photo-1547153760-18fc86c3be8e?w=600&h=400&fit=crop' },
+      { name: 'Программирование', image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop' },
+      { name: 'Фотография', image: 'https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=600&h=400&fit=crop' },
+      { name: 'Кулинария', image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=400&fit=crop' },
+    ];
+    for (const u of categoryUpdates) {
+      await db.categories.update({ name: u.name }, { $set: { image: u.image } });
     }
 
-    const masterclasses = await db.masterclasses.find({});
-    for (const mc of masterclasses) {
-      const newImage = mcImageMap[mc.title];
-      const newTitle = mc.title === 'Хип-хоп基础' ? 'Хип-хоп для начинающих' : null;
-      const updates = {};
-      if (newImage && (!mc.image || mc.image.startsWith('/img/'))) updates.image = newImage;
-      if (newTitle) updates.title = newTitle;
-      if (Object.keys(updates).length > 0) {
-        await db.masterclasses.update({ _id: mc._id }, { $set: updates });
-      }
+    const mcUpdates = [
+      { title: 'Акварельный пейзаж', image: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=600&h=400&fit=crop' },
+      { title: 'Гитара для начинающих', image: 'https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=600&h=400&fit=crop' },
+      { title: 'Хип-хоп для начинающих', image: 'https://images.unsplash.com/photo-1535525153412-5a42439a210d?w=600&h=400&fit=crop' },
+      { title: 'Python с нуля', image: 'https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=600&h=400&fit=crop' },
+      { title: 'Портрет на телефон', image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=600&h=400&fit=crop' },
+      { title: 'Татарская кухня', image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=400&fit=crop' },
+    ];
+    for (const u of mcUpdates) {
+      await db.masterclasses.update({ title: u.title }, { $set: { image: u.image } });
     }
 
-    console.log('БД обновлена: добавлены изображения');
+    const hipHopLegacy = await db.masterclasses.findOne({ title: 'Хип-хоп基础' });
+    if (hipHopLegacy) {
+      await db.masterclasses.update({ _id: hipHopLegacy._id }, { $set: {
+        title: 'Хип-хоп для начинающих',
+        image: 'https://images.unsplash.com/photo-1535525153412-5a42439a210d?w=600&h=400&fit=crop',
+      }});
+    }
+
+    console.log('БД обновлена: изображения заменены');
   }
 }
 
