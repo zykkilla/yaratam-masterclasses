@@ -13,10 +13,17 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.set('trust proxy', 1);
+
 app.use(session({
   secret: 'yaratam-secret-key-2026',
   resave: false,
   saveUninitialized: false,
+  cookie: {
+    secure: process.env.NODE_ENV === 'production',
+    httpOnly: true,
+    sameSite: 'lax',
+  },
 }));
 
 app.use((req, res, next) => {
@@ -37,8 +44,8 @@ app.use((req, res) => {
 });
 
 seed().then(() => {
-  app.listen(PORT, () => {
-    console.log(`Сервер запущен: http://localhost:${PORT}`);
+  app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Сервер запущен на порту ${PORT}`);
   });
 }).catch(err => {
   console.error('Ошибка инициализации БД:', err);
