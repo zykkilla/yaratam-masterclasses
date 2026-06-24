@@ -35,8 +35,10 @@ app.use((req, res, next) => {
 
 const masterclassRoutes = require('./routes/masterclasses');
 const adminRoutes = require('./routes/admin');
+const authRoutes = require('./routes/auth');
 
 app.use('/', masterclassRoutes);
+app.use('/auth', authRoutes);
 app.use('/admin', adminRoutes);
 
 app.use((req, res) => {

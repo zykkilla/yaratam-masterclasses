@@ -14,9 +14,13 @@
         <a href="/">Каталог</a>
         <a href="/my-registrations">Мои записи</a>
         <% if (user) { %>
-          <a href="/admin/dashboard">Админ-панель</a>
+          <% if (user.role === 'admin') { %>
+            <a href="/admin/dashboard">Админ-панель</a>
+          <% } %>
+          <a href="/auth/logout">Выйти</a>
         <% } else { %>
-          <a href="/admin/login">Вход</a>
+          <a href="/auth/login">Вход</a>
+          <a href="/auth/register">Регистрация</a>
         <% } %>
       </nav>
     </div>

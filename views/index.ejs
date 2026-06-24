@@ -14,10 +14,14 @@
         <a href="/">Каталог</a>
         <a href="/my-registrations">Мои записи</a>
         <% if (user) { %>
-          <a href="/admin/dashboard">Админ-панель</a>
-          <a href="/admin/logout">Выйти</a>
+          <% if (user.role === 'admin') { %>
+            <a href="/admin/dashboard">Админ-панель</a>
+          <% } %>
+          <a href="/profile"><%= user.username %></a>
+          <a href="/auth/logout">Выйти</a>
         <% } else { %>
-          <a href="/admin/login">Вход</a>
+          <a href="/auth/login">Вход</a>
+          <a href="/auth/register">Регистрация</a>
         <% } %>
       </nav>
     </div>
@@ -38,10 +42,10 @@
         <select name="category" class="filter-select">
           <option value="">Все категории</option>
           <% categories.forEach(cat => { %>
-            <option value="<%= cat._id %>" <%= currentCategory === cat._id ? 'selected' : '' %>><%= cat.name %></option>
+            <option value="<%= cat._id.toString() %>" <%= currentCategory === cat._id.toString() ? 'selected' : '' %>><%= cat.name %></option>
           <% }) %>
         </select>
-        <input type="text" name="search" value="<%= search %>" placeholder="Поиск..." class="filter-input">
+        <input type="text" name="search" value="<%= search %>" placeholder="Поиск по названию..." class="filter-input">
         <button type="submit" class="btn">Найти</button>
       </form>
     </section>
@@ -54,7 +58,7 @@
       <div class="grid">
         <% masterclasses.forEach(mc => { %>
           <div class="card">
-            <div class="card-img" style="background-color: <%= mc.slotsLeft > 0 ? '#e8f5e9' : '#ffebee' %>">
+            <div class="card-img">
               <span class="card-category"><%= mc.categoryName %></span>
             </div>
             <div class="card-body">
@@ -67,7 +71,7 @@
                   Места закончились
                 <% } %>
               </p>
-              <a href="/masterclass/<%= mc._id %>" class="btn btn-small">Подробнее</a>
+              <a href="/masterclass/<%= mc._id %>" class="btn btn-small btn-outline">Подробнее</a>
             </div>
           </div>
         <% }) %>

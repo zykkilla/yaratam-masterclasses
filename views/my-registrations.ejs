@@ -13,14 +13,19 @@
       <nav class="nav">
         <a href="/">Каталог</a>
         <a href="/my-registrations">Мои записи</a>
+        <% if (user) { %>
+          <a href="/auth/logout">Выйти</a>
+        <% } else { %>
+          <a href="/auth/login">Вход</a>
+        <% } %>
       </nav>
     </div>
   </header>
 
   <main class="container">
-    <h1>Мои записи</h1>
+    <h1 style="margin: 30px 0; text-transform: uppercase; letter-spacing: 2px;">Мои записи</h1>
 
-    <form method="GET" action="/my-registrations" class="filter-form" style="margin-bottom: 2rem;">
+    <form method="GET" action="/my-registrations" class="filter-form" style="margin-bottom: 30px;">
       <input type="email" name="email" value="<%= email %>" placeholder="Введите ваш email" class="filter-input" required>
       <button type="submit" class="btn">Найти</button>
     </form>
