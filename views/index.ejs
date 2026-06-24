@@ -58,7 +58,7 @@
       <div class="grid">
         <% masterclasses.forEach(mc => { %>
           <div class="card">
-            <div class="card-img">
+            <div class="card-img" style="background-image: url('<%= mc.image %>'); background-size: cover; background-position: center;">
               <span class="card-category"><%= mc.categoryName %></span>
             </div>
             <div class="card-body">

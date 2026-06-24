@@ -20,12 +20,12 @@ async function seed() {
   if (catCount > 0) return;
 
   const categories = [
-    { name: 'Рисование' },
-    { name: 'Музыка' },
-    { name: 'Танцы' },
-    { name: 'Программирование' },
-    { name: 'Фотография' },
-    { name: 'Кулинария' },
+    { name: 'Рисование', image: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&h=400&fit=crop' },
+    { name: 'Музыка', image: 'https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=600&h=400&fit=crop' },
+    { name: 'Танцы', image: 'https://images.unsplash.com/photo-1508700929628-666bc8bd84ea?w=600&h=400&fit=crop' },
+    { name: 'Программирование', image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=600&h=400&fit=crop' },
+    { name: 'Фотография', image: 'https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=600&h=400&fit=crop' },
+    { name: 'Кулинария', image: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=600&h=400&fit=crop' },
   ];
   const savedCats = await db.categories.insert(categories);
 
@@ -37,7 +37,7 @@ async function seed() {
       date: '2026-07-05',
       time: '14:00',
       maxParticipants: 15,
-      image: '/img/painting.jpg',
+      image: 'https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=600&h=400&fit=crop',
       createdAt: new Date(),
     },
     {
@@ -47,17 +47,17 @@ async function seed() {
       date: '2026-07-07',
       time: '16:00',
       maxParticipants: 10,
-      image: '/img/guitar.jpg',
+      image: 'https://images.unsplash.com/photo-1510915361894-db8b60106cb1?w=600&h=400&fit=crop',
       createdAt: new Date(),
     },
     {
-      title: 'Хип-хоп基礎',
+      title: 'Хип-хоп для начинающих',
       description: 'Введение в культуру хип-хопа. Изучим базовые движения.',
       category: savedCats[2]._id,
       date: '2026-07-10',
       time: '18:00',
       maxParticipants: 20,
-      image: '/img/dance.jpg',
+      image: 'https://images.unsplash.com/photo-1547153760-18fc86c3be8e?w=600&h=400&fit=crop',
       createdAt: new Date(),
     },
     {
@@ -67,7 +67,7 @@ async function seed() {
       date: '2026-07-12',
       time: '12:00',
       maxParticipants: 12,
-      image: '/img/python.jpg',
+      image: 'https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=600&h=400&fit=crop',
       createdAt: new Date(),
     },
     {
@@ -77,7 +77,7 @@ async function seed() {
       date: '2026-07-15',
       time: '15:00',
       maxParticipants: 18,
-      image: '/img/photo.jpg',
+      image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=600&h=400&fit=crop',
       createdAt: new Date(),
     },
     {
@@ -87,7 +87,7 @@ async function seed() {
       date: '2026-07-18',
       time: '11:00',
       maxParticipants: 8,
-      image: '/img/cooking.jpg',
+      image: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=600&h=400&fit=crop',
       createdAt: new Date(),
     },
   ];
